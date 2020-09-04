@@ -2,7 +2,7 @@
 
 require("SRC/Link.php");
 
-$bdays = DBcommand("SELECT * FROM verjaardagen")['output'];
+$bdays = DBcommand("SELECT * FROM verjaardagen ORDER BY `date`")['output'];
 
 
 
