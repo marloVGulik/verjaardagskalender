@@ -6,15 +6,15 @@ $data;
 if(isset($_POST['id'])) {
     if(isset($_POST['name']) && isset($_POST['date'])) {
         DBcommand("UPDATE verjaardagen SET `name` = :name, `date` = :date WHERE `id` = :id", [':name' => $_POST['name'], ':date' => $_POST['date'], ':id' => $_POST['id']]);
-        header("index.php");
+        header("location: index.php");
     }
 
     $data = DBcommand("SELECT * FROM verjaardagen WHERE `id` = :id", [':id' => $_POST['id']])['output'];
-    if(sizeof($data) != 1) {
-        header("index.php");
+    if(count($data) != 1) {
+        header("location: index.php");
     }
 } else {
-    header("index.php");
+    header("location: index.php");
 }
 
 

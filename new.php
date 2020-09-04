@@ -3,7 +3,7 @@ require("SRC/Link.php");
 
 if(isset($_POST['name']) && isset($_POST['date'])) {
     DBcommand("INSERT INTO verjaardagen (`id`, `name`, `date`) VALUES (NULL, :name, :date)", [':name' => $_POST['name'], ':date' => $_POST['date']]);
-    header("index.php");
+    header("location: index.php");
 }
 
 ?>
